@@ -1,0 +1,95 @@
+.container {
+    width: 1240px; //Sẽ thay đổi tùy theo dự án khác nhau. Nó có cái là 1440, 1240, 1920,...
+    padding-left: 15px; //Sẽ thay đổi tùy dự án. Có cái sẽ 64px, 12px, 24px, 48, 64px,
+    padding-right: 15px; //
+    margin: 0 auto;
+    box-sizing: border-box; //Đảm bảo các component con bên trong theo đúng kích thước ban đầu, không bị tràn viền ăn ra do padding, hoặc margin,... các kích thước làm đẩy size trình duyệt.
+}
+
+.header {
+    padding-top: 62px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 40px;
+        height: 48px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    &__navigation {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 24px;
+
+            li {
+                a {
+                    white-space: nowrap;
+                    text-decoration: none;
+                    font-family: 'sr';
+                    font-size: 16px;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    &__searching {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 12px;
+        padding: 12px 16px;
+        width: 577px;
+        background-color: #f0f0f0;
+        border-radius: 62px;
+
+        &-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        &-content {
+            flex: 1;
+            height: 100%;
+
+            input {
+                width: calc(100% - 52px);
+                height: 100%;
+                border: 1px solid #f0f0f0;
+                background-color: transparent;
+                outline: none;
+                border-radius: 62px;
+                color: black;
+                font-family: 'sr';
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__cta {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 14px;
+
+        &-cart,
+        &-person {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+}
