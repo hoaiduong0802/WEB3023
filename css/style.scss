@@ -1,13 +1,19 @@
+*{
+    a{
+        text-decoration: none;
+    }
+}
 .container {
-    width: 1240px; //Sẽ thay đổi tùy theo dự án khác nhau. Nó có cái là 1440, 1240, 1920,...
-    padding-left: 15px; //Sẽ thay đổi tùy dự án. Có cái sẽ 64px, 12px, 24px, 48, 64px,
-    padding-right: 15px; //
+    width: 1240px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 auto;
-    box-sizing: border-box; //Đảm bảo các component con bên trong theo đúng kích thước ban đầu, không bị tràn viền ăn ra do padding, hoặc margin,... các kích thước làm đẩy size trình duyệt.
+    box-sizing: border-box;
 }
 
 .header {
     padding-top: 62px;
+    padding-bottom: 24px;
 
     .container {
         display: flex;
@@ -28,11 +34,15 @@
     }
 
     &__navigation {
+        height: 100%;
+        align-content: center;
+
         ul {
             display: flex;
             align-items: center;
             justify-content: space-between;
             column-gap: 24px;
+            cursor: pointer;
 
             li {
                 a {
@@ -41,6 +51,60 @@
                     font-family: 'sr';
                     font-size: 16px;
                     color: black;
+                }
+            }
+
+            :first-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 4px;
+                position: relative;
+
+                .menu_down {
+                    position: absolute;
+                    width: 150px;
+                    z-index: 2000;
+                    top: 20px;
+                    left: 0px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 0.2s;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 14px;
+                        background-color: #E3E1D9;
+                        row-gap: 12px;
+                        border-radius: 8px;
+
+                        li {
+                            width: 100%;
+                            padding: 14px;
+                            border-radius: 14px;
+                            transition: 0.2s;
+                            cursor: pointer;
+
+                            &:hover {
+                                transition: 0.2s;
+                                background-color: black;
+
+                                a {
+                                    color: #f0f0f0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    transition: 0.1s;
+
+                    .menu_down {
+                        opacity: 1;
+                        visibility: visible;
+                    }
                 }
             }
         }
@@ -90,6 +154,136 @@
         &-person {
             display: inline-flex;
             align-items: center;
+        }
+    }
+}
+
+.main-wrapper {
+    .hero_banner {
+        background-color: #f2f0f1;
+        width: 100vw;
+        position: relative;
+
+        &__content {
+            position: absolute;
+            z-index: 100;
+            width: 50%;
+            height: calc(100% - 122px);
+            align-content: center;
+
+            &-slogan {
+                h1 {
+                    font-family: interb;
+                    font-size: 64px;
+                    line-height: 64px;
+                }
+            }
+
+            &-text {
+                margin: 32px 0px;
+                p{
+                    max-width: 545px;
+                    font-family: 'sr';
+                    font-size: 16px;
+                    color: black;
+                    opacity: 0.6;
+                    line-height: 22px;
+                }
+            }
+            &-btn{
+                margin-bottom: 48px;
+                a{
+                    display: block;
+                    width: max-content;
+                    padding: 16px 54px;
+                    background-color: black;
+                    color: white;
+                    border-radius: 62px;
+                    font-family: 'sm';
+                    font-size: 16px;
+                }
+            }
+            &-recogni{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 596px;
+                >div{
+                    span{
+                        font-family: 'sb';
+                        font-size: 40px;
+                    }
+                    p{
+                        font-family: 'sr';
+                        font-size: 16px;
+                        color: black;
+                        opacity: 0.6;
+                    }
+                    &.products{
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            border: 1px solid black;
+                            opacity: 0.1;
+                            height: 100%;
+                            left: -32px;
+                            top: 0;
+                        }
+                        &::after{
+                            position: absolute;
+                            content: "";
+                            border: 1px solid black;
+                            opacity: 0.1;
+                            height: 100%;
+                            right: -32px;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: calc(100vh - 260px);
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                position: absolute;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            &-accessories{
+                position: absolute;
+                width: 100%;
+                :first-child{
+                    top: 64px;
+                    right: 86px;
+                    width: 104px;
+                    height: 104px;
+                }
+                :last-child{
+                    width: 56px;
+                    height: 56px;
+                    top: 275px;
+                    right: 639px;
+                }
+            }
+        }
+
+        &__brands {
+            background-color: black;
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 122px;
+            }
         }
     }
 }

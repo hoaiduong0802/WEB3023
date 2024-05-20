@@ -1,3 +1,7 @@
+* a {
+  text-decoration: none;
+}
+
 .container {
   width: 1240px;
   padding-left: 15px;
@@ -8,6 +12,7 @@
 
 .header {
   padding-top: 62px;
+  padding-bottom: 24px;
 }
 .header .container {
   display: flex;
@@ -25,12 +30,17 @@
   display: inline-flex;
   align-items: center;
 }
+.header__navigation {
+  height: 100%;
+  align-content: center;
+}
 .header__navigation ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   -moz-column-gap: 24px;
        column-gap: 24px;
+  cursor: pointer;
 }
 .header__navigation ul li a {
   white-space: nowrap;
@@ -38,6 +48,53 @@
   font-family: "sr";
   font-size: 16px;
   color: black;
+}
+.header__navigation ul :first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  position: relative;
+}
+.header__navigation ul :first-child .menu_down {
+  position: absolute;
+  width: 150px;
+  z-index: 2000;
+  top: 20px;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+.header__navigation ul :first-child .menu_down ul {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background-color: #E3E1D9;
+  row-gap: 12px;
+  border-radius: 8px;
+}
+.header__navigation ul :first-child .menu_down ul li {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.header__navigation ul :first-child .menu_down ul li:hover {
+  transition: 0.2s;
+  background-color: black;
+}
+.header__navigation ul :first-child .menu_down ul li:hover a {
+  color: #f0f0f0;
+}
+.header__navigation ul :first-child:hover {
+  transition: 0.1s;
+}
+.header__navigation ul :first-child:hover .menu_down {
+  opacity: 1;
+  visibility: visible;
 }
 .header__searching {
   display: flex;
@@ -80,4 +137,123 @@
 .header__cta-cart, .header__cta-person {
   display: inline-flex;
   align-items: center;
+}
+
+.main-wrapper .hero_banner {
+  background-color: #f2f0f1;
+  width: 100vw;
+  position: relative;
+}
+.main-wrapper .hero_banner__content {
+  position: absolute;
+  z-index: 100;
+  width: 50%;
+  height: calc(100% - 122px);
+  align-content: center;
+}
+.main-wrapper .hero_banner__content-slogan h1 {
+  font-family: interb;
+  font-size: 64px;
+  line-height: 64px;
+}
+.main-wrapper .hero_banner__content-text {
+  margin: 32px 0px;
+}
+.main-wrapper .hero_banner__content-text p {
+  max-width: 545px;
+  font-family: "sr";
+  font-size: 16px;
+  color: black;
+  opacity: 0.6;
+  line-height: 22px;
+}
+.main-wrapper .hero_banner__content-btn {
+  margin-bottom: 48px;
+}
+.main-wrapper .hero_banner__content-btn a {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 16px 54px;
+  background-color: black;
+  color: white;
+  border-radius: 62px;
+  font-family: "sm";
+  font-size: 16px;
+}
+.main-wrapper .hero_banner__content-recogni {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 596px;
+}
+.main-wrapper .hero_banner__content-recogni > div span {
+  font-family: "sb";
+  font-size: 40px;
+}
+.main-wrapper .hero_banner__content-recogni > div p {
+  font-family: "sr";
+  font-size: 16px;
+  color: black;
+  opacity: 0.6;
+}
+.main-wrapper .hero_banner__content-recogni > div.products {
+  position: relative;
+}
+.main-wrapper .hero_banner__content-recogni > div.products::before {
+  position: absolute;
+  content: "";
+  border: 1px solid black;
+  opacity: 0.1;
+  height: 100%;
+  left: -32px;
+  top: 0;
+}
+.main-wrapper .hero_banner__content-recogni > div.products::after {
+  position: absolute;
+  content: "";
+  border: 1px solid black;
+  opacity: 0.1;
+  height: 100%;
+  right: -32px;
+  top: 0;
+}
+.main-wrapper .hero_banner__img {
+  width: 100%;
+  height: calc(100vh - 260px);
+  position: relative;
+}
+.main-wrapper .hero_banner__img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+.main-wrapper .hero_banner__img-accessories {
+  position: absolute;
+  width: 100%;
+}
+.main-wrapper .hero_banner__img-accessories :first-child {
+  top: 64px;
+  right: 86px;
+  width: 104px;
+  height: 104px;
+}
+.main-wrapper .hero_banner__img-accessories :last-child {
+  width: 56px;
+  height: 56px;
+  top: 275px;
+  right: 639px;
+}
+.main-wrapper .hero_banner__brands {
+  background-color: black;
+}
+.main-wrapper .hero_banner__brands .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 122px;
 }/*# sourceMappingURL=style.css.map */
