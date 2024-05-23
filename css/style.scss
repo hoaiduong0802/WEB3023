@@ -1,8 +1,9 @@
-*{
-    a{
+* {
+    a {
         text-decoration: none;
     }
 }
+
 .container {
     width: 1240px;
     padding-left: 15px;
@@ -162,17 +163,22 @@
     .hero_banner {
         background-color: #f2f0f1;
         width: 100vw;
-        position: relative;
+
+        .container {
+            height: 100%;
+        }
 
         &__content {
             position: absolute;
             z-index: 100;
             width: 50%;
-            height: calc(100% - 122px);
+            height: calc(100% - 260px);
             align-content: center;
 
             &-slogan {
                 h1 {
+                    max-width: 577px;
+                    width: 100%;
                     font-family: interb;
                     font-size: 64px;
                     line-height: 64px;
@@ -181,7 +187,8 @@
 
             &-text {
                 margin: 32px 0px;
-                p{
+
+                p {
                     max-width: 545px;
                     font-family: 'sr';
                     font-size: 16px;
@@ -190,9 +197,11 @@
                     line-height: 22px;
                 }
             }
-            &-btn{
+
+            &-btn {
                 margin-bottom: 48px;
-                a{
+
+                a {
                     display: block;
                     width: max-content;
                     padding: 16px 54px;
@@ -203,25 +212,30 @@
                     font-size: 16px;
                 }
             }
-            &-recogni{
+
+            &-recogni {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 max-width: 596px;
-                >div{
-                    span{
+
+                >div {
+                    span {
                         font-family: 'sb';
                         font-size: 40px;
                     }
-                    p{
+
+                    p {
                         font-family: 'sr';
                         font-size: 16px;
                         color: black;
                         opacity: 0.6;
                     }
-                    &.products{
+
+                    &.products {
                         position: relative;
-                        &::before{
+
+                        &::before {
                             position: absolute;
                             content: "";
                             border: 1px solid black;
@@ -230,7 +244,8 @@
                             left: -32px;
                             top: 0;
                         }
-                        &::after{
+
+                        &::after {
                             position: absolute;
                             content: "";
                             border: 1px solid black;
@@ -248,29 +263,39 @@
             width: 100%;
             height: calc(100vh - 260px);
             position: relative;
+            .container {
+                position: relative;
+                overflow: hidden;
+
+            }
 
             img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                position: absolute;
-                right: 50%;
-                transform: translateX(50%);
+                height: 115%;
+                width: 106%;
+                object-fit: contain;
             }
-            &-accessories{
+
+            &-accessories {
                 position: absolute;
                 width: 100%;
-                :first-child{
+                height: 100%;
+                top: 0;
+                left: 0;
+
+                :first-child {
+                    position: absolute;
                     top: 64px;
-                    right: 86px;
+                    right: 19px;
                     width: 104px;
                     height: 104px;
                 }
-                :last-child{
+
+                :last-child {
+                    position: absolute;
                     width: 56px;
                     height: 56px;
-                    top: 275px;
-                    right: 639px;
+                    top: 297px;
+                    right: 534px;
                 }
             }
         }
@@ -282,7 +307,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                height: 122px;
+                height: 126px;
             }
         }
     }

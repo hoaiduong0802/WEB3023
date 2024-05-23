@@ -142,16 +142,20 @@
 .main-wrapper .hero_banner {
   background-color: #f2f0f1;
   width: 100vw;
-  position: relative;
+}
+.main-wrapper .hero_banner .container {
+  height: 100%;
 }
 .main-wrapper .hero_banner__content {
   position: absolute;
   z-index: 100;
   width: 50%;
-  height: calc(100% - 122px);
+  height: calc(100% - 260px);
   align-content: center;
 }
 .main-wrapper .hero_banner__content-slogan h1 {
+  max-width: 577px;
+  width: 100%;
   font-family: interb;
   font-size: 64px;
   line-height: 64px;
@@ -223,30 +227,36 @@
   height: calc(100vh - 260px);
   position: relative;
 }
+.main-wrapper .hero_banner__img .container {
+  position: relative;
+  overflow: hidden;
+}
 .main-wrapper .hero_banner__img img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  right: 50%;
-  transform: translateX(50%);
+  height: 115%;
+  width: 106%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .main-wrapper .hero_banner__img-accessories {
   position: absolute;
   width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 .main-wrapper .hero_banner__img-accessories :first-child {
+  position: absolute;
   top: 64px;
-  right: 86px;
+  right: 19px;
   width: 104px;
   height: 104px;
 }
 .main-wrapper .hero_banner__img-accessories :last-child {
+  position: absolute;
   width: 56px;
   height: 56px;
-  top: 275px;
-  right: 639px;
+  top: 297px;
+  right: 534px;
 }
 .main-wrapper .hero_banner__brands {
   background-color: black;
@@ -255,5 +265,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 122px;
+  height: 126px;
 }/*# sourceMappingURL=style.css.map */
